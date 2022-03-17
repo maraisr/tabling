@@ -3,7 +3,7 @@ export function tabling(source) {
 
 	return new Proxy({}, {
 		ownKeys() {
-			return keys ||= Object.keys(source);
+			return keys = keys || Object.keys(source);
 		},
 		getOwnPropertyDescriptor() {
 			return {

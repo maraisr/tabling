@@ -18,29 +18,26 @@
     "type": "module",
     "exports": {
         ".": {
-            "import": "./index.mjs",
-            "require": "./index.js"
+            "import": "./d/index.mjs",
+            "require": "./d/index.js"
         },
         "./warm": {
-            "import": "./warm.mjs",
-            "require": "./warm.js"
+            "import": "./warm/index.mjs",
+            "require": "./warm/index.js"
         },
         "./package.json": "./package.json"
     },
-    "main": "index.js",
-    "module": "index.mjs",
-    "types": "index.d.ts",
-    "files": [
-        "index.js",
-        "index.mjs",
-        "index.d.ts",
-        "warm.js",
-        "warm.mjs",
-        "warm.d.ts"
+    "module": "d/index.mjs",
+    "main": "d/index.js",
+	"types": "index.d.ts",
+	"files": [
+        "warm",
+        "d",
+        "*.d.ts"
     ],
     "scripts": {
         "bench": "node -r tsm bench/index.js",
-        "build": "bundt src/index.js",
+        "build": "bundt",
         "test": "uvu . -r tsm  \".spec.ts$\""
     },
     "devDependencies": {
@@ -53,5 +50,12 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "volta": {
+        "node": "16.14.1"
+    },
+    "modes": {
+        "default": "src/default.js",
+        "warm": "src/warm.js"
     }
 }

@@ -1,6 +1,6 @@
 import { test , suite} from 'uvu';
 import * as assert from 'uvu/assert';
-import * as lib from './src';
+import * as lib from './src/default.js';
 import * as lib_warm from './src/warm.js';
 
 test('api', () => {
