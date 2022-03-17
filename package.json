@@ -21,6 +21,10 @@
             "import": "./index.mjs",
             "require": "./index.js"
         },
+        "./warm": {
+            "import": "./warm.mjs",
+            "require": "./warm.js"
+        },
         "./package.json": "./package.json"
     },
     "main": "index.js",
@@ -29,12 +33,15 @@
     "files": [
         "index.js",
         "index.mjs",
-        "index.d.ts"
+        "index.d.ts",
+        "warm.js",
+        "warm.mjs",
+        "warm.d.ts"
     ],
     "scripts": {
+        "bench": "node -r tsm bench/index.js",
         "build": "bundt src/index.js",
-        "test": "uvu . -r tsm  \".spec.ts$\"",
-		"bench": "node -r tsm bench/index.js"
+        "test": "uvu . -r tsm  \".spec.ts$\""
     },
     "devDependencies": {
         "@marais/tsconfig": "^0.0.2",

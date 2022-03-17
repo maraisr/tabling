@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@marais/tsconfig': ^0.0.2
-  '@types/benchmark': ^2.1.1
   benchmark: ^2.1.4
   bundt: ^1.1.5
   tsm: ^2.2.1
@@ -11,7 +10,6 @@ specifiers:
 
 devDependencies:
   '@marais/tsconfig': 0.0.2
-  '@types/benchmark': 2.1.1
   benchmark: 2.1.4
   bundt: 1.1.5
   tsm: 2.2.1
@@ -22,10 +20,6 @@ packages:
 
   /@marais/tsconfig/0.0.2:
     resolution: {integrity: sha512-xBWOcIbhm8t1ar63BluoL+DiKMHEIZ7Cc3pZ3FiKImUDmbNkqLmokQOIlAS/sB2SKc0yuAvmF5nKrkqOZsljZw==}
-    dev: true
-
-  /@types/benchmark/2.1.1:
-    resolution: {integrity: sha512-XmdNOarpSSxnb3DE2rRFOFsEyoqXLUL+7H8nSGS25vs+JS0018bd+cW5Ma9vdlkPmoTHSQ6e8EUFMFMxeE4l+g==}
     dev: true
 
   /benchmark/2.1.4:
