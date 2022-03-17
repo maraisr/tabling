@@ -1,0 +1,50 @@
+{
+    "name": "tabling",
+    "version": "0.0.2",
+    "description": "Let's table this object till a later date",
+    "keywords": [
+        "fast",
+        "object",
+        "memoize",
+        "getters"
+    ],
+    "repository": "maraisr/tabling",
+    "license": "MIT",
+    "author": {
+        "name": "Marais Rossouw",
+        "email": "me@marais.dev",
+        "url": "https://marais.io"
+    },
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./index.mjs",
+            "require": "./index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "main": "index.js",
+    "module": "index.mjs",
+    "types": "index.d.ts",
+    "files": [
+        "index.js",
+        "index.mjs",
+        "index.d.ts"
+    ],
+    "scripts": {
+        "build": "bundt src/index.js",
+        "test": "uvu . -r tsm  \".spec.ts$\"",
+		"bench": "node -r tsm bench/index.js"
+    },
+    "devDependencies": {
+        "@marais/tsconfig": "^0.0.2",
+        "benchmark": "^2.1.4",
+        "bundt": "^1.1.5",
+        "tsm": "^2.2.1",
+        "typescript": "^4.5.5",
+        "uvu": "^0.5.3"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
