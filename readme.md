@@ -1,6 +1,35 @@
-# `tabling`
+<div align="right">
+<h1><code>tabling</code></h1>
+<br />
+<br />
+
+<p><code>npm add tabling</code> makes objects lazy</p>
+<span>
+<a href="https://github.com/maraisr/tabling/actions/workflows/ci.yml">
+	<img src="https://github.com/maraisr/tabling/actions/workflows/ci.yml/badge.svg"/>
+</a>
+<a href="https://npm-stat.com/charts.html?package=tabling">
+	<img src="https://badgen.net/npm/dw/tabling?labelColor=black&color=black&cache=600" alt="downloads"/>
+</a>
+<a href="https://packagephobia.com/result?p=tabling">
+	<img src="https://badgen.net/packagephobia/install/tabling?labelColor=black&color=black" alt="size"/>
+</a>
+<a href="https://bundlephobia.com/result?p=tabling">
+	<img src="https://badgen.net/bundlephobia/minzip/tabling?labelColor=black&color=black" alt="size"/>
+</a>
+</span>
+
+<br />
+<br />
+</div>
 
 Commit a getter's result for one-time evaluation.
+
+## ⚙️ Install
+
+```sh
+npm add tabling
+```
 
 ## 🚀 Usage
 
@@ -68,9 +97,11 @@ benchmark :: aot
 
 > **setup** — the time to construct the object, _without_ reading from it.
 >
-> **jit** — the object is constructed on the hot path, and read from immediately. Think "request bound" objects.
+> **jit** — the object is constructed on the hot path, and read from immediately. Think "request
+> bound" objects.
 >
-> **aot** — the object is constructed _ahead of time_, and read later on the hot path. Think "module scope" objects.
+> **aot** — the object is constructed _ahead of time_, and read later on the hot path. Think "module
+> scope" objects.
 
 ## ❤️ Thanks
 
