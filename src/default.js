@@ -1,6 +1,5 @@
 export function tabling(source) {
-	let cache = new Map, keys;
-
+	let keys;
 	return new Proxy({}, {
 		ownKeys() {
 			return keys = keys || Object.keys(source);
