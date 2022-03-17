@@ -1,4 +1,4 @@
-import { test , suite} from 'uvu';
+import { suite, test } from 'uvu';
 import * as assert from 'uvu/assert';
 import * as lib from './src/default.js';
 import * as lib_warm from './src/warm.js';
@@ -98,7 +98,7 @@ const run = (name: string, lib: any) => {
 		assert.equal(ran, 1, 'can only run once');
 	});
 
-	s('can\'t assign values', () => {
+	s('can\'t assign values to getters', () => {
 		const target = lib({
 			get answer() {
 				return 42;
@@ -106,8 +106,21 @@ const run = (name: string, lib: any) => {
 		});
 
 		target.answer = 16;
+		target.something = 'stuff';
 
 		assert.equal(target.answer, 42);
+		assert.equal(target.something, 'stuff');
+	});
+
+	s('allow Object.assign', () => {
+		const target = lib({
+			get answer() {
+				return 42;
+			},
+		});
+
+		Object.assign(target, { stuff: 'things' });
+		assert.equal(target.stuff, 'things');
 	});
 
 	s('non getteres should be accessible', () => {
@@ -123,7 +136,7 @@ const run = (name: string, lib: any) => {
 	});
 
 	s.run();
-}
+};
 
 run('default', lib.tabling);
 run('warm', lib_warm.tabling);

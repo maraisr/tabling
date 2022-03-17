@@ -5,17 +5,19 @@ export function tabling(source) {
 		ownKeys() {
 			return keys = keys || Object.keys(source);
 		},
-		getOwnPropertyDescriptor() {
+		getOwnPropertyDescriptor(target, prop) {
+			const descriptor = Reflect.getOwnPropertyDescriptor(source, prop);
+			if (descriptor == null || descriptor.get == null) return descriptor;
+
 			return {
-				enumerable: true,
-				writable: false,
 				configurable: true,
+				enumerable: true,
 			};
 		},
 		get(target, prop) {
-			if (cache.has(prop)) return cache.get(prop);
+			if (prop in target) return target[prop];
 			const val = source[prop];
-			cache.set(prop, val);
+			target[prop] = val;
 			return val;
 		},
 	});
