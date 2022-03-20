@@ -1,4 +1,4 @@
-export function tabling(source) {
+export function tabling<Source extends Readonly<Record<string, unknown>>>(source: Source): Readonly<Source> {
 	const target = {};
 
 	for (const [key, descriptor] of Object.entries(Object.getOwnPropertyDescriptors(source))) {
@@ -10,7 +10,7 @@ export function tabling(source) {
 		Object.defineProperty(target, key, {
 			...descriptor,
 			get() {
-				const value = descriptor.get.call(this);
+				const value = descriptor.get!.call(this);
 				Object.defineProperty(this, key, { value });
 
 				return value;
@@ -18,5 +18,5 @@ export function tabling(source) {
 		});
 	}
 
-	return target;
+	return target as Readonly<Source>;
 }
